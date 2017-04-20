@@ -47,5 +47,13 @@
     "distribution",
     "README.md"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerbf/snicksnack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerbf/snicksnack/issues"
+  },
+  "homepage": "https://github.com/rogerbf/snicksnack#readme"
 }
