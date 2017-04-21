@@ -1,4 +1,4 @@
-import snicksnack from './index'
+import snicksnack from "./index"
 
 test(`snicksnack is defined`, () => {
   expect(snicksnack).toBeDefined()
