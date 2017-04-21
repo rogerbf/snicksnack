@@ -47,7 +47,9 @@
     "distribution",
     "README.md"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "prob.js": "^1.0.6"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rogerbf/snicksnack.git"
