@@ -11,7 +11,7 @@ const defaultConfig = {
 
 const words = count => range(count).map(() => commonWords[zipf()])
 
-const sentences = ({ sentenceLength: { min, max } }, count) =>
+const sentences = ({ sentenceLength: { min, max } }, words, count) =>
   range(count)
   .map(() =>
     words(Math.ceil(min - 1 + Math.random() * (max - (min - 1))))
@@ -22,5 +22,5 @@ const sentences = ({ sentenceLength: { min, max } }, count) =>
 
 module.exports = Object.assign(
   words,
-  { sentences: sentences.bind(null, defaultConfig) }
+  { sentences: sentences.bind(null, defaultConfig, words) }
 )
