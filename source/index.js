@@ -8,12 +8,12 @@ const defaultConfig = {
   }
 }
 
-const words = (count) =>
-  Array(count).fill(``).map(() => commonWords[zipf()])
+const range = count => Array(count).fill(undefined)
+
+const words = (count) => range(count).map(() => commonWords[zipf()])
 
 const sentences = ({ sentenceLength: { min, max } }, count) =>
-  Array(count)
-  .fill(``)
+  range(count)
   .map(() =>
     words(Math.ceil(min - 1 + Math.random() * (max - (min - 1))))
     .join(` `)
