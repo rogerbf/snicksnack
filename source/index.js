@@ -1,5 +1,6 @@
 const commonWords = require(`./common-words`)
 const zipf = require(`prob.js`).zipf(1, commonWords.length)
+const range = count => Array(count).fill(undefined)
 
 const defaultConfig = {
   sentenceLength: {
@@ -7,8 +8,6 @@ const defaultConfig = {
     max: 26
   }
 }
-
-const range = count => Array(count).fill(undefined)
 
 const words = count => range(count).map(() => commonWords[zipf()])
 
