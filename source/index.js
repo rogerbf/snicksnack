@@ -10,7 +10,7 @@ const defaultConfig = {
 
 const range = count => Array(count).fill(undefined)
 
-const words = (count) => range(count).map(() => commonWords[zipf()])
+const words = count => range(count).map(() => commonWords[zipf()])
 
 const sentences = ({ sentenceLength: { min, max } }, count) =>
   range(count)
