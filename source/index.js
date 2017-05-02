@@ -26,7 +26,6 @@ const words = state => {
   )
 }
 
-
 const sentences = state => {
   const { range, words, sentenceLength: { min, max } } = state
   return Object.assign(
