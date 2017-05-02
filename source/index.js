@@ -45,12 +45,12 @@ const sentences = state => {
   )
 }
 
-const factory = configuration =>
-  [ zipf, range, words, sentences ]
-  .reduce((snicksnack, f) => f(snicksnack), configuration)
+const factory = (fns, configuration) => Object.assign(
+  userConfiguration => factory(fns, userConfiguration),
+  fns.reduce((snicksnack, f) => f(snicksnack), configuration)
+)
 
 module.exports = Object.assign(
-  userConfiguration => factory(userConfiguration),
-  factory(defaults),
-  defaults
+  factory([ zipf, range, words, sentences ], defaults),
+  { defaults }
 )
