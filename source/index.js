@@ -45,12 +45,17 @@ const sentences = state => {
   )
 }
 
+const snicksnack = ({ words, sentences }) => ({
+  words: count => words(count),
+  sentences: count => sentences(count)
+})
+
 const factory = (fns, configuration) => Object.assign(
   userConfiguration => factory(fns, userConfiguration),
-  fns.reduce((snicksnack, f) => f(snicksnack), configuration)
+  fns.reduce((state, f) => f(state), Object.assign({}, configuration))
 )
 
 module.exports = Object.assign(
-  factory([ zipf, range, words, sentences ], defaults),
+  factory([ zipf, range, words, sentences, snicksnack ], defaults),
   { defaults }
 )
