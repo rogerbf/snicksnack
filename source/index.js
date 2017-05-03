@@ -49,10 +49,7 @@ const sentences = state => {
   )
 }
 
-const snicksnack = ({ words, sentences }) => ({
-  words: count => words(count),
-  sentences: count => sentences(count)
-})
+const snicksnack = ({ words, sentences }) => ({ words, sentences })
 
 module.exports = Object.assign(
   factory([ zipf, range, words, sentences, snicksnack ], defaults),
