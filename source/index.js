@@ -1,5 +1,10 @@
 const probjs = require(`prob.js`)
 
+const factory = (fns, configuration) => Object.assign(
+  userConfiguration => factory(fns, userConfiguration),
+  fns.reduce((state, f) => f(state), Object.assign({}, configuration))
+)
+
 const defaults = {
   sentenceLength: {
     min: 7,
@@ -48,11 +53,6 @@ const snicksnack = ({ words, sentences }) => ({
   words: count => words(count),
   sentences: count => sentences(count)
 })
-
-const factory = (fns, configuration) => Object.assign(
-  userConfiguration => factory(fns, userConfiguration),
-  fns.reduce((state, f) => f(state), Object.assign({}, configuration))
-)
 
 module.exports = Object.assign(
   factory([ zipf, range, words, sentences, snicksnack ], defaults),
