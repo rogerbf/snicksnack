@@ -6,3 +6,4 @@ snicksnack*.tgz
 npm-debug.log
 .vscode
 coverage
+*.nocommit
