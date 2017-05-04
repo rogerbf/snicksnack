@@ -1,7 +1,7 @@
 {
   "name": "snicksnack",
   "version": "0.0.1",
-  "description": "",
+  "description": "generate filler text in swedish",
   "main": "./distribution/index.js",
   "scripts": {
     "test": "jest --config .jest",
@@ -21,7 +21,12 @@
     "prettier": "prettier-eslint --write",
     "prettier:all": "prettier-eslint --write \"source/**/*.js\""
   },
-  "keywords": [],
+  "keywords": [
+    "filler",
+    "text",
+    "lorem",
+    "ipsum"
+  ],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
   "license": "MIT",
   "devDependencies": {
