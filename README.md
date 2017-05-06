@@ -1,6 +1,6 @@
 # snicksnack
 
-Generates an array of random sentences or words from the [Swedish Kelly-list](https://spraakbanken.gu.se/eng/kelly) containing 8425 of the most frequent lemmas in the Swedish language.
+Generates an array of random sentences or words from the [Swedish Kelly-list](https://spraakbanken.gu.se/eng/kelly) which contains 8425 of the most frequent lemmas in the Swedish language.
 
 ## usage
 
