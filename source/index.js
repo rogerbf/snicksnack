@@ -26,33 +26,30 @@ const range = state => Object.assign(
   { range: (count = 0) => Array(count).fill(undefined) }
 )
 
-const words = state => {
-  const { range, random, wordList } = state
-  return Object.assign(
-    {},
-    state,
-    { words: count => range(count).map(() => wordList[random()]) }
-  )
-}
+const words = (state, { range, random, wordList } = state) => Object.assign(
+  {},
+  state,
+  { words: count => range(count).map(() => wordList[random()]) }
+)
 
-const sentences = state => {
-  const { range, words, sentenceLength: { min, max } } = state
-  return Object.assign(
-    {},
-    state,
-    {
-      sentences: count => (
-        range(count)
-        .map(() =>
-          words(Math.ceil(min - 1 + Math.random() * (max - (min - 1))))
-          .join(` `)
-          .concat(`.`)
-          .replace(/^./, first => first.toUpperCase())
-        )
+const sentences = (
+  state,
+  { range, words, sentenceLength: { min, max } } = state
+) => Object.assign(
+  {},
+  state,
+  {
+    sentences: count => (
+      range(count)
+      .map(() =>
+        words(Math.ceil(min - 1 + Math.random() * (max - (min - 1))))
+        .join(` `)
+        .concat(`.`)
+        .replace(/^./, first => first.toUpperCase())
       )
-    }
-  )
-}
+    )
+  }
+)
 
 const snicksnack = ({ words, sentences }) => ({ words, sentences })
 
