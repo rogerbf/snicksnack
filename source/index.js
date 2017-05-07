@@ -10,13 +10,14 @@ const defaults = {
     min: 7,
     max: 26
   },
-  wordList: require(`./common-words`)
+  wordList: require(`./common-words`),
+  distribution: `zipf`
 }
 
-const zipf = state => Object.assign(
+const random = state => Object.assign(
   {},
   state,
-  { zipf: probjs.zipf(1, state.wordList.length) }
+  { random: probjs[state.distribution](1, state.wordList.length) }
 )
 
 const range = state => Object.assign(
@@ -26,11 +27,11 @@ const range = state => Object.assign(
 )
 
 const words = state => {
-  const { range, zipf, wordList } = state
+  const { range, random, wordList } = state
   return Object.assign(
     {},
     state,
-    { words: count => range(count).map(() => wordList[zipf()]) }
+    { words: count => range(count).map(() => wordList[random()]) }
   )
 }
 
@@ -56,6 +57,6 @@ const sentences = state => {
 const snicksnack = ({ words, sentences }) => ({ words, sentences })
 
 module.exports = Object.assign(
-  factory([ zipf, range, words, sentences, snicksnack ], defaults),
+  factory([ random, range, words, sentences, snicksnack ], defaults),
   { defaults }
 )
