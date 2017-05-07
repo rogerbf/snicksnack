@@ -14,11 +14,13 @@ const defaults = {
 }
 
 const zipf = state => Object.assign(
+  {},
   state,
   { zipf: probjs.zipf(1, state.wordList.length) }
 )
 
 const range = state => Object.assign(
+  {},
   state,
   { range: (count = 0) => Array(count).fill(undefined) }
 )
@@ -26,6 +28,7 @@ const range = state => Object.assign(
 const words = state => {
   const { range, zipf, wordList } = state
   return Object.assign(
+    {},
     state,
     { words: count => range(count).map(() => wordList[zipf()]) }
   )
@@ -34,6 +37,7 @@ const words = state => {
 const sentences = state => {
   const { range, words, sentenceLength: { min, max } } = state
   return Object.assign(
+    {},
     state,
     {
       sentences: count => (
