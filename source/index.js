@@ -3,7 +3,7 @@ const random = require(`./random`)
 const range = require(`./range`)
 const words = require(`./words`)
 const sentences = require(`./sentences`)
-const expose = require(`./expose-api`)
+const api = require(`./api`)
 
 const defaults = {
   sentenceLength: {
@@ -16,6 +16,6 @@ const defaults = {
 }
 
 module.exports = Object.assign(
-  factory([ random, range, words, sentences, expose ], defaults),
+  factory([ random, range, words, sentences, api ], defaults),
   { defaults }
 )
