@@ -1,7 +1,7 @@
 {
   "name": "snicksnack",
   "version": "0.0.2",
-  "description": "generate filler text in swedish",
+  "description": "filler text in swedish",
   "main": "./distribution/index.js",
   "scripts": {
     "test": "jest --config .jest",
