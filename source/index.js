@@ -10,7 +10,7 @@ const defaults = {
     min: 7,
     max: 26
   },
-  wordList: require(`./common-words`),
+  wordList: require(`kelly-lists`).swedish,
   probjs: require(`prob.js`),
   distribution: `zipf`
 }
