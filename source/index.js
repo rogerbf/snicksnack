@@ -11,12 +11,12 @@ const defaults = {
     min: 7,
     max: 26
   },
-  wordList: wordLists.swedish,
+  language: `swedish`,
   probjs: require(`prob.js`),
   distribution: `zipf`
 }
 
 module.exports = Object.assign(
-  factory([ random, range, words, sentences, api ], defaults),
+  factory([ state => ({ ...state, wordList: wordLists[state.language] }), random, range, words, sentences, api ], defaults),
   { defaults, wordLists }
 )
