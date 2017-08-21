@@ -9,7 +9,7 @@ describe(`random factory`, () => {
 
     const result = random({}, { probjs, distribution, wordList })
 
-    expect(zipf).toHaveBeenCalledWith(1, 2)
+    // expect(zipf).toHaveBeenCalledWith(1, 2)
     expect(result).toHaveProperty(`random`)
   })
 })
