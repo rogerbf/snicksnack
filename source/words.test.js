@@ -8,11 +8,10 @@ describe(`words`, () => {
   })
 
   it(`returns a word from a wordlist`, () => {
-    const range = jest.fn(() => [ undefined ])
     const wordList = [ `a` ]
     const random = jest.fn(() => 1)
 
-    const initialState = { range, wordList, random }
+    const initialState = { wordList, random }
     const state = words(initialState)
 
     const actual = state.words(1)
