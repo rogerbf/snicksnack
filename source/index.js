@@ -17,6 +17,19 @@ const defaults = {
 }
 
 module.exports = Object.assign(
-  factory([ state => ({ ...state, wordList: wordLists[state.language] }), random, range, words, sentences, api ], defaults),
-  { defaults, wordLists }
+  factory(
+    [
+      state => ({ ...state, wordList: wordLists[state.language] }),
+      random,
+      range,
+      words,
+      sentences,
+      api
+    ],
+    defaults
+  ),
+  {
+    defaults,
+    wordLists
+  }
 )
