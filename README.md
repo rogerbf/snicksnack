@@ -1,6 +1,6 @@
 # snicksnack
 
-Generates an array of random words or sentences based no the [Swedish Kelly-list](https://spraakbanken.gu.se/eng/kelly) which contains 8425 of the most frequent lemmas in the Swedish language. The random selection follows a Zipfian distribution.
+Generates an array of random words or sentences from [kelly-lists](https://www.npmjs.com/package/kelly-lists). Random selection follows a Zipfian distribution and limits words to a single occurence.
 
 ## usage
 
@@ -13,7 +13,7 @@ const randomSentences = snicksnack.sentences(3)
 
 ## api
 
-### `snicksnack(configuration)`
+### `snicksnack([configuration])`
 
 Returns an instance of snicksnack with a custom configuration. `configuration` is an &lt;Object&gt; and has to contain the following keys:
 
@@ -23,12 +23,10 @@ Returns an instance of snicksnack with a custom configuration. `configuration` i
     min: 7,
     max: 26
   },
-  wordList: [ `den`, `sista` ],
-  distribution: `zipf`
+  wordList: { custom: [ `den`, `sista` ] },
+  language: `custom`
 }
 ```
-
-`distribution` can be either `zipf` or `uniform`
 
 ### `snicksnack.words(count)`
 
