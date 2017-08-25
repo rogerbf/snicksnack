@@ -23,8 +23,7 @@ Returns an instance of snicksnack with a custom configuration. `configuration` i
     min: 7,
     max: 26
   },
-  wordList: { custom: [ `den`, `sista` ] },
-  language: `custom`
+  language: `swedish`
 }
 ```
 
