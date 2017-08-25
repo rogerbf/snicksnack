@@ -11,9 +11,7 @@ const defaults = {
     min: 7,
     max: 26
   },
-  language: `swedish`,
-  probjs: require(`prob.js`),
-  distribution: `zipf`
+  language: `swedish`
 }
 
 module.exports = Object.assign(
@@ -29,7 +27,6 @@ module.exports = Object.assign(
     defaults
   ),
   {
-    defaults,
-    wordLists
+    defaults
   }
 )

@@ -1,5 +1,7 @@
-module.exports = (state, { probjs, distribution, wordList } = state) => Object.assign(
+const probjs = require(`prob.js`)
+
+module.exports = state => Object.assign(
   {},
   state,
-  { random: collection => probjs[distribution](1, collection.length)() }
+  { random: collection => probjs.zipf(1, collection.length)() }
 )
