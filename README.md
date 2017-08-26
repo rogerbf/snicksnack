@@ -1,6 +1,6 @@
 # snicksnack
 
-Generates an array of random words or sentences from [kelly-lists](https://www.npmjs.com/package/kelly-lists). Random selection follows a Zipfian distribution and limits words to a single occurence.
+Generates an array of random words or sentences choosen from word lists provided by the [kelly-lists](https://www.npmjs.com/package/kelly-lists) module. Random selection adheres to a zipfian distribution with the addition of not icluding a word more than once.
 
 ## usage
 
