@@ -27,6 +27,8 @@ Returns an instance of snicksnack with a custom configuration. `configuration` i
 }
 ```
 
+Available languages are: arabic, chinese, english, italian, norwegian, russian, swedish
+
 ### `snicksnack.words(count)`
 
 Returns an &lt;Array&gt; of `count` words.
