@@ -14,7 +14,7 @@ const defaults = {
   language: `swedish`
 }
 
-module.exports = Object.assign(
+const snicksnack = (state = {}) =>
   factory(
     [
       state => ({ ...state, wordList: wordLists[state.language] }),
@@ -24,9 +24,7 @@ module.exports = Object.assign(
       sentences,
       api
     ],
-    defaults
-  ),
-  {
-    defaults
-  }
-)
+    Object.assign({}, defaults, state)
+  )
+
+module.exports = Object.assign(snicksnack, snicksnack())
